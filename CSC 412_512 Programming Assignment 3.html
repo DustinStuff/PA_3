@@ -1,0 +1,127 @@
+
+<!-- saved from url=(0055)http://slazebni.cs.illinois.edu/fall18/assignment2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>CSC 412_512 Programming Assignment 3</title>
+</head>
+<body bgcolor="white">
+<table width="800">
+<tbody><tr>
+<td>
+<h2>Fall 2021 CSC 412/512</h2>
+<h2>Programming Assignment 3: Multi-Layer Neural Networks</h2>
+<h3>Type:</h3> Group Project (2~3 members). For group formation method, please see <a href="Attachment 1- PA3 Group Instruction.pdf">Attachment 1- PA3 Group Instruction</a>.
+Indepedent work is only approved for extraordinary cases. 
+Communication and leadership skills are expected and inherently examined in this project. 
+<h3>Due date:</h3> Satuarday, <b>December 1st, 11:59:59PM</b> 
+<h3>Group formation due date: </h3> Wednesday, <b>November 10th, 11:59:59PM</b>
+<h3>Grade:</h3> 100 marks in total, while it accounts for <b>25%</b> towards the final grade 
+
+<p>
+<small>Credit: UIUC Svetlana Lazebnik's CS 498 and Stanford's CS231n</small><br><br>
+</p>
+<img src="./CSC 412_512 Programming Assignment 3_files/nn.gif" width="600"><br>
+<small>Source: https://gfycat.com/gifs/detail/MiniatureDependentCob, https://www.youtube.com/watch?v=aircAruvnKk</small><br><br>
+
+<p>
+In this assignment you will implement multi-layer neural networks on the <a href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR-10</a>
+image classification dataset. The goal of this assignment is to help you understand the
+fundamentals of neural networks and backpropagation. Specifically, you will write your own backward pass and train two- and three-layer networks with ReLU and sigmoid nonlinearities. You will also get experience with hyperparameter tuning and using proper train/test/validation
+data splits.
+The format of this assignment is inspired by the <a href="http://cs231n.github.io/assignments2018/assignment1/">Stanford CS231n assignments</a>, and we have borrowed some of their data loading and instructions.</p>
+
+<p><b>Download the starting code <a href="assignment3_materials.zip">here</a></b>.</p>
+
+<p>The top-level notebook (<code>neural_network.ipynb</code>) will guide you through all the steps of training a neural network on CIFAR-10.
+    You will implement the multi-layer neural network in the <code>neural_net.py</code> file.</p>
+
+<p>We also provide you with a notebook to help with debugging and testing your neural network implementation by using a
+    toy dataset along with numeric gradient checks. It is found in <code>develop_neural_network.ipynb</code>.
+<b>NOTE: This file is only for debugging/experimenting/testing purposes. It will not be graded, and you are not required to submit it. </b></p>
+
+<p>None of the parts of this assignment require use of a machine with a GPU. You may complete the assignment using your local machine
+or you may use Google Colaboratory. However, we encourage you to try using Colaboratory if you are not familiar with it and
+don't have access to GPUs since Colaboratory provides free access to a Tesla K80 (for running short jobs).</p>
+
+
+
+<h3>Environment Setup (Local)</h3>
+
+    <p>If you will be completing the assignment on a local machine then you will need a python environment set up with the appropriate packages.</p>
+
+    <p>We suggest that you use Anaconda to manage python package dependencies (<a href="https://www.anaconda.com/download">https://www.anaconda.com/download</a>). This guide provides useful information on how to use Conda: <a href="https://conda.io/docs/user-guide/getting-started.html">https://conda.io/docs/user-guide/getting-started.html</a>.</p>
+
+
+<h3>Data Setup (Local)</h3>
+
+
+<p>Once you have unzipped the zip file, navigate to the cifar10 directory in assignment3_materials and execute the get_dataset script provided:</p>
+<pre>    <code>
+cd assignment3_materials/cifar10/
+./get_datasets.sh
+        </code>
+</pre>
+
+
+<h3>Data Setup (For Colaboratory)</h3>
+
+    <p>If you are using Google Colaboratory for this assignment you will need do some addition setup steps.</p>
+
+    <p>Download the assignment zip file and follow the steps above to download CIFAR-10 to your local machine. Next, you
+        should make a folder in your Google Drive to hold all of your assignment files and upload the entire assignment
+        folder (including the cifar10 dataset you downloaded) into this Google drive file.</p>
+
+    <p>You will now need to open the Assignment 3 ipython notebook file from your Google Drive folder in Colaboratory
+        and run a few setup commands. However, we have condensed all the important commands you need
+        to run into an <b><a href="CSC 412_512 Programming Assignment 3_files/colab_setup.ipynb">ipython notebook</a></b> (you can disregard the section on GPU setup for
+        this assignment).</p>
+
+
+<h3>IPython</h3>
+
+
+
+<p>The assignment is given to you in the <code>neural_network.ipynb</code> file. As mentioned, if you are using
+    Colaboratory, you can open the ipython notebook directly in Colaboratory. If you are using a local machine, ensure
+    that ipython is installed (<a href="https://ipython.org/install.html">https://ipython.org/install.html</a>). You may
+    then navigate the assignment directory in terminal and start a local ipython server using the <code>jupyter notebook</code>
+    command.</p>
+
+
+<h3>Submission Instructions:</h3>
+
+<p>You have the following four experiments to complete:</p>
+<ul>
+<li>2-layer Relu</li>
+<li>3-layer Relu</li>
+<li>2-layer Sigmoid</li>
+<li>3-layer Sigmoid</li>
+</ul>
+		
+    <p>Submission of this assignment will involve the following steps:</p>
+    <ol>
+		
+        </li></ul>
+        <li> You must upload three files to <b><a href="https://usm.instructure.com/">Canvas</a></b>.
+        </li>
+        <ol>
+        <li>All of your code (python files and ipynb file) <b>in a single ZIP file</b>. The filename should be <b>Student_IDs_PA3_code.zip</b>.</li>
+        <li>Your ipython notebook with output cells converted to <b>PDF format</b>. The filename should be <b>Student_IDs_PA3_output.pdf</b>.</li>
+        <li>A brief report in PDF format using <a href="CSC 412_512 PA3 Report.docx">this template</a>. The filename should be <b>Student_IDs_PA3_report.pdf</b>.</li>
+         	Each group’s report needs to include a brief statement of individual contribution, i.e., which group member was responsible for which parts of the solution and submitted material. 
+			Don't forget to include the names of all group members at the top of the report.
+		<li>Please zip all the above documents into one package and name it as <b>Student_IDs_PA3.zip</b> and upload it to <b><a href="https://usm.instructure.com/">Canvas</a></b>. Multiple attempts will be allowed but only your last submission will be graded. No email submission is accepted. We reserve the right to take off points for not following directions.</li>
+
+        </ol>
+    </ol>
+	Multiple attempts will be allowed but only your last submission will be graded. No email submission is accepted.
+I reserve the right to take off points for not following directions.
+
+<h3>Late Policy:</h3> For every day that your assignment is late, your score gets multiplied by 0.75. The penalty gets saturated after four days, that is, you can still get up to about 32% of the original points by turning in the assignment at all. If you have a compelling reason for not being able to submit the assignment on time and would like to make a special arrangement, you must send me email at least four days before the due date (any genuine emergency situations will be handled on an individual basis).
+
+<p>Please refer to our course syllabus on academic integrity, and extension requests.</p>
+
+
+</td></tr></tbody></table>
+
+
+</body></html>
